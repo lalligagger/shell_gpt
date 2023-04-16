@@ -1,6 +1,5 @@
 import json
 from os import getenv
-from os.path import basename
 
 
 # read in local json file as string
@@ -25,7 +24,7 @@ Important: when using stac-client DO NOT format bounding boxes like: --bbox 102.
 The correct format is: --bbox 102.5 22.5 103.5 23.5
 Important: do not return a stac-client command without providing a URL. If the user does not specify, use https://landsatlook.usgs.gov/stac-server/
 The cannonical stac-client command is: stac-client search URL --bbox BBOX --datetime DT --query QUERY
-An example is: 
+An example is:
 stac-client search https://landsatlook.usgs.gov/stac-server/  --bbox 102.5 22.5 103.5 23.5 --collections landsat-c2l2-sr --datetime 2022-09-01/2023-04-30 --query "eo:cloud_cover<20"
 IMPORTANT: NO COMMAS IN BETWEEN NUMERIC BBOX VALUES. USE SPACES ONLY BETWEEN BBOX VALUES. NO EXECPTIONS.
 
