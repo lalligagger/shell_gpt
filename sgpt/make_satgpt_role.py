@@ -1,6 +1,6 @@
+import json
 from os import getenv
 from os.path import basename
-import json
 
 
 # read in local json file as string
