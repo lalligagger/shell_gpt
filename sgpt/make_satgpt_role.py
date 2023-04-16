@@ -2,10 +2,12 @@ from os import getenv
 from os.path import basename
 import json
 
+
 # read in local json file as string
 def read_json_file(file_path):
     with open(file_path, "r") as f:
         return f.read()
+
 
 STAC_COLLECTION = read_json_file(file_path="reference/stac/collection.json")
 STAC_LANDSAT = read_json_file(file_path="reference/stac/landsat.json")
@@ -33,7 +35,7 @@ ____
 
 # stac
 # # example stac items
-# # the following are examples of json stac items. they do not follow actual catalog names or filenames, these must be queried from the 
+# # the following are examples of json stac items. they do not follow actual catalog names or filenames, these must be queried from the
 # # catalogs or items specified by the user, most often using jq. for exampple, to get the band names in an item it's keys must be traversed.
 # # the heirarchy represented in the examples below is a good guide for how to traverse the json responses.
 
