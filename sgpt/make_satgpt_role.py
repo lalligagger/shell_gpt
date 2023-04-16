@@ -1,15 +1,6 @@
-import platform
 from os import getenv
 from os.path import basename
 import json
-from distro import name as distro_name
-
-
-"""
-This module makes a prompt for OpenAI requests with some context.
-Some of the following lines were inspired by similar open source project yolo-ai-cmdbot.
-Credits: @demux79 @wunderwuzzi23
-"""
 
 # read in local json file as string
 def read_json_file(file_path):
@@ -67,9 +58,11 @@ ____
 
 # Request: """
 
+file_path = getenv("HOME") + "/.config/shell_gpt/roles/satgpt.json"
 
-# open /Users/kevinlalli/.config/shell_gpt/roles/satgpt.json, set the 'role' value to SHELL_PROMPT
-role_dict = json.loads(read_json_file(getenv("HOME") + "/.config/shell_gpt/roles/satgpt.json"))
+with open(file_path, "r") as f:
+    role_dict = json.loads(f.read())
+
 role_dict["role"] += SHELL_PROMPT
 with open(getenv("HOME") + "/.config/shell_gpt/roles/satgpt.json", "w") as f:
     f.write(json.dumps(role_dict))
